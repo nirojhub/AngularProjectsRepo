@@ -1,8 +1,34 @@
 {
-    "employees": [
-        {
-            "username": "Niroj",
-            "password": "1234"
-        }
-    ]
+  "employees": [
+    {
+      "id": "1",
+      "username": "Axle",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "username": "Jane",
+      "password": "1234"
+    },
+    {
+      "id": "3",
+      "username": "Mary",
+      "password": "1234"
+    },
+    {
+      "id": "9589",
+      "username": "jane",
+      "password": "1234"
+    },
+    {
+      "id": "4ac7",
+      "username": "ina",
+      "password": "1234"
+    },
+    {
+      "id": "a859",
+      "username": "joe",
+      "password": "234"
+    }
+  ]
 }
