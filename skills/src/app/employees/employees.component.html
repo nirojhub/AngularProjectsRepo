@@ -1,6 +1,11 @@
-<p>employees works!</p>
-<div *ngFor="let emp of employees$ | async">
-    <div>{{emp.id}}</div>
-    <div>{{emp.username}}</div>
-    <div>{{emp.password}}</div>
-</div>
+<main>
+    <div>
+        <h2>Our Employees</h2>
+    </div>
+    <div class="container" *ngFor="let employee of employees$ | async">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">Name: {{employee.username}}</div>
+            <div class="col-md-4 col-sm-6 col-xs-12">Password: {{employee.password}}</div>
+        </div>
+    </div>
+</main>

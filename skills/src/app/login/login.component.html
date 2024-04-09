@@ -1,0 +1,54 @@
+<header>
+    <img src="./assets/chart.gif" id="logo" />
+    <h1><a href="index.html">Login to Competition</a></h1>
+</header>
+<nav>
+    <ul>
+        <li><a routerLink="/home">home</a></li>
+        <li><a routerLink="/register">register</a></li>
+        <li><a routerLink="/login">login</a></li>
+    </ul>
+</nav>
+<div id="container">
+    <main>        
+        <div class="container">
+        <h2 class="pb-2">Login for Competition</h2>
+        <form [formGroup] = "frmLogin" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="username">User name</label>
+              <input type="text" class="form-control" id="username" 
+              formControlName="username">
+              <span *ngIf="frmLogin.controls['username'].errors
+              && !frmLogin.controls['username'].pristine">
+                Invalid</span>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password"
+              formControlName="password">
+              <span *ngIf="frmLogin.controls['password'].errors
+              && !frmLogin.controls['password'].pristine">
+                Invalid</span>
+            </div>
+            <button type="submit" class="btn btn-primary"
+            [disabled]="!frmLogin.valid">Submit</button>
+        </form>
+        </div>
+    </main>
+    <aside>
+        <section>
+            <h4>Health News</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore   et dolore magna aliqua.
+            </p>
+        </section>
+        <section>
+            <h4>Healthy Recipes</h4>
+            <a href="">grilled chicken</a>
+            <a href="">minced beef patties</a>
+            <a href="">potato pancakes</a>
+            <a href="">fish stew</a>
+        </section>
+    </aside>
+</div>
+<footer>
