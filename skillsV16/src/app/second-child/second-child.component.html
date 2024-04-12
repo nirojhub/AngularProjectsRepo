@@ -1,0 +1,10 @@
+<p>second-child works!</p>
+<span *ngIf="!approved; else pending">You are approved</span>
+<ng-template #pending>
+    <p> Approve is pending</p>
+</ng-template>
+<div class="form-check">
+    <input class = "checkbox-lg" type = "checkbox" 
+    id = "cb123"
+    [checked] = "approved"/>
+</div>

@@ -1,14 +1,3 @@
-<header>
-    <img src="./assets/chart.gif" id="logo" />
-    <h1><a href="index.html">Login to Competition</a></h1>
-</header>
-<nav>
-    <ul>
-        <li><a routerLink="/home">home</a></li>
-        <li><a routerLink="/register">register</a></li>
-        <li><a routerLink="/login">login</a></li>
-    </ul>
-</nav>
 <div id="container">
     <main>        
         <div class="container">
@@ -18,17 +7,19 @@
               <label for="username">User name</label>
               <input type="text" class="form-control" id="username" 
               formControlName="username">
-              <span *ngIf="frmLogin.controls['username'].errors
-              && !frmLogin.controls['username'].pristine">
-                Invalid</span>
+              @if((frmLogin.controls['username'].errors)
+              && (!frmLogin.controls['username'].pristine)){
+              <span>Invalid</span>
+              }
             </div>
             <div class="form-group">
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password"
               formControlName="password">
-              <span *ngIf="frmLogin.controls['password'].errors
-              && !frmLogin.controls['password'].pristine">
-                Invalid</span>
+              @if((frmLogin.controls['password'].errors)
+              && (!frmLogin.controls['password'].pristine)){
+              <span>Invalid</span>
+              }
             </div>
             <button type="submit" class="btn btn-primary"
             [disabled]="!frmLogin.valid">Submit</button>

@@ -17,9 +17,8 @@ export class AuthService {
     let subject = new Subject<boolean>();
     this.user$ = this.http.get(
       'http://localhost:3000/employees', 
-      {
-        params:{username:currentUser}
-      });
+      {params:{username:currentUser}}
+    );
       this.user$.subscribe(data=>{     
         if(data[0]){
           if(currentUser == data[0].username && currentPassword == data[0].password){
@@ -27,7 +26,7 @@ export class AuthService {
             isLoggedIn = true;
             subject.next(isLoggedIn);
           } 
-        } else{
+        }else{
           isLoggedIn = false;
           subject.next(isLoggedIn);        
         }          

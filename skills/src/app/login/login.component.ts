@@ -1,4 +1,3 @@
-import { CommonModule, formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators} from '@angular/forms'
 import { HttpClient, HttpClientModule } from "@angular/common/http";
@@ -9,7 +8,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -19,8 +18,7 @@ export class LoginComponent implements OnInit{
   private lSubscription: Subscription = new Subscription;
   frmLogin: FormGroup;
   constructor(private http:HttpClient, private router:Router, 
-    private auth:AuthService)
-    {
+    private auth:AuthService){
     this.frmLogin = this.createFormGroup();
   }
   ngOnInit(): void {  }
@@ -46,7 +44,7 @@ export class LoginComponent implements OnInit{
       }
     });
 
-    /* his. user$ = this.http.get(
+    /* this. user$ = this.http.get(
       "http://localhost:3000/employees",
       {
         params:{username:currentUser, password:currentPassword}

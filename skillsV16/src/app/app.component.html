@@ -1,0 +1,21 @@
+<span>{{ getTitle() }} app is running!</span>
+
+<div (click)="makeBlue()">{{ divColor }} is our colour!</div>
+
+<div class="form-check">
+  <input class = "checkbox-lg" type = "checkbox" id = "cb1"
+  checked
+  [checked] = "approved"/>
+</div>
+<div>{{ approved }}</div>
+<p>
+  <label>Testing</label> &nbsp;
+  <input type="text" class="form-control" maxlength="6"
+  [(ngModel)]="userInput"/>
+</p>
+<p>{{userInput}}</p>
+<div [innerHTML]="userInput"></div>
+<app-first-child [messageFromParent]="messageToChild"
+(eventEmitter)="messageFromFirstChild($event)"
+></app-first-child>
+<app-second-child></app-second-child>
