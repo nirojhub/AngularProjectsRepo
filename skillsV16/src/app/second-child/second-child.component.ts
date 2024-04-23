@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-second-child',
@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class SecondChildComponent {
   approved: boolean = false;
+  @ViewChild('fName') fName! : ElementRef;
+  getApproval(cb:HTMLInputElement){
+    //this.fName = cb.value;
+    console.log(this.fName?.nativeElement.value);
+  }
+  calledFromParent(){
+    console.log("Called from Parent");    
+  }
 }

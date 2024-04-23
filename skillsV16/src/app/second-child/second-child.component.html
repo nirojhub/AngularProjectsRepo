@@ -8,3 +8,12 @@
     id = "cb123"
     [checked] = "approved"/>
 </div>
+<div>
+    <label for="fName"> First Name:
+        <input type="text" #fName/>
+    </label>
+    <div>
+        <button (click)="getApproval(fName)">Get Name</button>
+    </div>
+</div>
+<span>{{fName.value}}</span>

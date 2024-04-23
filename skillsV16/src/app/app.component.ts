@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { SecondChildComponent } from "./second-child/second-child.component"
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
   divColor = "Black";
   approved = false;
   userInput = '';
+  @ViewChild(SecondChildComponent) secondChild! : SecondChildComponent;
   messageToChild = 'Hello from Parent!!';
   getTitle(){
     return this.title;
@@ -27,7 +29,11 @@ export class AppComponent {
   }
 
   messageFromFirstChild(message:string){
-    console.log(message);
+    console.log(message);    
+  }
+
+  ngAfterViewInit(){
+    console.log(this.secondChild.calledFromParent());
     
   }
 
